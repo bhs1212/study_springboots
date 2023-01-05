@@ -13,22 +13,9 @@
     />
   </head>
   <body>
-    <div class="container">
-      <div class="fs-2">board/form</div>
-      <div class="mt-3">
-        <form action="/board/form" method="post">
-          <div class="mt-3 row text-center">
-            <div class="col">title</div>
-            <div class="col">content</div>
-            <div class="col">userName</div>
-            <div class="col">date</div>
-          </div>
-          <hr />
-          <div>
-            <button class="btn btn-primary opacity-75">Submit</button>
-          </div>
-        </form>
-      </div>
+    <div>/board/edit</div>
+    <div>
+      <a href="/board/list">/board/list</a>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

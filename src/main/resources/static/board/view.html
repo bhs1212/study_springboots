@@ -14,20 +14,19 @@
   </head>
   <body>
     <div class="container">
-      <div class="fs-2">board/form</div>
-      <div class="mt-3">
-        <form action="/board/form" method="post">
-          <div class="mt-3 row text-center">
-            <div class="col">title</div>
-            <div class="col">content</div>
-            <div class="col">userName</div>
-            <div class="col">date</div>
-          </div>
-          <hr />
-          <div>
-            <button class="btn btn-primary opacity-75">Submit</button>
-          </div>
-        </form>
+      <div class="fs-2">board/view</div>
+      <div class="mt-3 row text-center">
+        <div class="col">title</div>
+        <div class="col">content</div>
+        <div class="col">userName</div>
+        <div class="col">date</div>
+      </div>
+      <hr />
+      <div>
+        <a href="/board/list">list</a>
+      </div>
+      <div>
+        <a href="/board/edit">edit</a>
       </div>
     </div>
     <script

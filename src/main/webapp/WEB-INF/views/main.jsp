@@ -7,6 +7,12 @@
     <title>Document</title>
   </head>
   <body>
-    <div>Main ! JSP</div>
+    <div>Main ! HTML</div>
+    <div>Board</div>
+    <div>
+      <a href="/board/form"
+        >/board/form BoardController form() /board/form.jsp</a
+      >
+    </div>
   </body>
 </html>
