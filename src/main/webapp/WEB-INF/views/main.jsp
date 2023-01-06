@@ -14,5 +14,10 @@
         >/board/form BoardController form() /board/form.jsp</a
       >
     </div>
+    <div>
+      <a href="/board_our/list"
+        >/board_our/form BoardOurController form() /board_our/list.jsp</a
+      >
+    </div>
   </body>
 </html>
