@@ -1,3 +1,5 @@
+<%-- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> --%>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,8 +23,12 @@
         <div>With Request.getAttribute : <%= firstWithRequest %></div>
     </div>
     <div>
-        <div>With Get Value on Spring : ${firstString}</div>
+        <div>With Get Value on Spring : ${firstString}, ${boardList}</div>
     </div>
+    <div>set value with Code Block</div>
+    <div><% int num = 0; %> set : <%= num %>, ${num}</div>
+    <div>set value with JSTL</div>
+    <div><c:set var="num_02" value="2" /> set : <c:out value="${num_02}" /></div>
     <div class="container"> 
       <table class="table">
         <thead>
