@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 // - CRUD : 
 //     + list(/board) -> view(/board/view) -> list(/board/list) 
 //     + list(/board) -> form(/board/form) -> list(/board/save) with Post -> list(/board/list)
@@ -33,12 +34,13 @@ public class BoardOurController {
         return modelAndView;   // --> Dispatcher Servlet
     }
     @RequestMapping(value = "/view", method = RequestMethod.GET)    // "/board_our/view"
-    public ModelAndView view(ModelAndView modelAndView){
+    public ModelAndView view(@RequestParam(value="uid", required=false) String uid,ModelAndView modelAndView){
+        System.out.println("uid : "+ uid);
         DataInfors dataInfors = new DataInfors();
         BoardBean boardBean = dataInfors.getDataWithBoardBean();
         modelAndView.addObject("boardBean", boardBean);
         modelAndView.setViewName("board_our/view");
-         return modelAndView;
+        return modelAndView;
     }
     @RequestMapping(value = "/form", method = RequestMethod.GET)    // "/board_our/form"
     public ModelAndView form(ModelAndView modelAndView){

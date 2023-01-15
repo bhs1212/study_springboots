@@ -1,3 +1,5 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,12 +17,24 @@
   <body>
     <div class="container">
       <div class="fs-2">board/view</div>
-      <div class="mt-3 row text-center">
-        <div class="col">title</div>
-        <div class="col">content</div>
-        <div class="col">userName</div>
-        <div class="col">date</div>
-      </div>
+      <table>
+        <tr>
+          <th>제목 : </th>
+          <td>${boardBean.title}</td>
+        </tr>
+        <tr>
+          <th>내용 : </th>
+          <td>${boardBean.content}</td>
+        </tr>
+        <tr>
+          <th>작성자 : </th>
+          <td>${boardBean.userName}</td>
+        </tr>
+        <tr>
+          <th>작성일 : </th>
+          <td>${boardBean.date}</td>
+        </tr>
+      </table>
       <hr />
       <div>
         <a href="/board/list">list</a>
