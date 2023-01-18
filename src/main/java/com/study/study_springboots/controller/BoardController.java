@@ -24,7 +24,7 @@ public class BoardController {
         return modelAndView;
     }
     @RequestMapping(value = "/view", method = RequestMethod.GET)
-    public ModelAndView view(@RequestParam(value="uid", required=false) String uid,ModelAndView modelAndView){
+    public ModelAndView view(@RequestParam String title,ModelAndView modelAndView){
         DataInfors dataInfors = new DataInfors();
         BoardBean boardBean = dataInfors.getDataWithBoardBean();
         modelAndView.addObject("boardBean", boardBean);

@@ -19,5 +19,11 @@
         >/board_our/form BoardOurController form() /board_our/list.jsp</a
       >
     </div>
+    <div>
+      <a href="/jstlformats">/jstl_formats.jsp</a>
+    </div>
+    <div>
+      <a href="/commonCodeOur/">/commonCodeOur/list.jsp</a>
+    </div>
   </body>
 </html>

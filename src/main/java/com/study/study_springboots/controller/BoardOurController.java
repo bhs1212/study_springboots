@@ -1,8 +1,10 @@
 package com.study.study_springboots.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -33,9 +35,11 @@ public class BoardOurController {
         modelAndView.setViewName("board_our/list");
         return modelAndView;   // --> Dispatcher Servlet
     }
-    @RequestMapping(value = "/view", method = RequestMethod.GET)    // "/board_our/view"
-    public ModelAndView view(@RequestParam(value="uid", required=false) String uid,ModelAndView modelAndView){
-        System.out.println("uid : "+ uid);
+    // @RequestMapping(value = "/view", method = RequestMethod.GET)    // "/board_our/view"
+    // public ModelAndView view(@RequestParam String uid,ModelAndView modelAndView){
+        // System.out.println("uid : "+ uid);
+    @RequestMapping(value = "/view/{action_uid}", method = RequestMethod.GET)    // "/board_our/view"
+    public ModelAndView view(@PathVariable String action_uid,ModelAndView modelAndView){
         DataInfors dataInfors = new DataInfors();
         BoardBean boardBean = dataInfors.getDataWithBoardBean();
         modelAndView.addObject("boardBean", boardBean);
@@ -48,7 +52,8 @@ public class BoardOurController {
         return modelAndView;
     }
     @RequestMapping(value = "/save", method = RequestMethod.POST)    // "/board_our/form"
-    public ModelAndView save(ModelAndView modelAndView){
+    // public ModelAndView save(@RequestParam HashMap<String, String> params, ModelAndView modelAndView){
+    public ModelAndView save(BoardBean boardBean, ModelAndView modelAndView){
         // insert biz
         modelAndView.setViewName("board_our/list");
         return modelAndView;
