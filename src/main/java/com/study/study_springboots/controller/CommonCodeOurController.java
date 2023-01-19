@@ -18,23 +18,32 @@ public class CommonCodeOurController {
     @Autowired
     CommonCodeOurService commonCodeOurService;
 
+    @RequestMapping(value = {"/insert"}, method = RequestMethod.POST)
+    public ModelAndView insert(@RequestParam Map<String, Object> params, ModelAndView modelAndView){
+        commonCodeOurService.insertOne(params);
+        modelAndView.setViewName("commonCode_our/list");
+        return modelAndView;
+    }
+
     @RequestMapping(value = {"/form"}, method = RequestMethod.GET)
     public ModelAndView form(@RequestParam Map<String, Object> params, ModelAndView modelAndView){
         modelAndView.setViewName("commonCode_our/edit");
         return modelAndView;
     }
 
-    @RequestMapping(value = {"/delete/{uniqueId}"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"/delete/{uniqueId}"}, method = RequestMethod.POST)
     public ModelAndView delete(@RequestParam Map<String, Object> params,@PathVariable String uniqueId, ModelAndView modelAndView){
         params.put("COMMON_CODE_ID", uniqueId);
-        commonCodeOurService.delete(params);
+        Object resultMap = commonCodeOurService.deleteAndGetList(params);
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("commonCode_our/list");
         return modelAndView;
     } 
 
     @RequestMapping(value = {"/update"}, method = RequestMethod.POST)
     public ModelAndView update(@RequestParam Map<String, Object> params, ModelAndView modelAndView){
-        commonCodeOurService.updateOne(params);
+        Object resultMap = commonCodeOurService.updateAndGetList(params);
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("commonCode_our/list");
         return modelAndView;
     }

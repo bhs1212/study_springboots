@@ -41,7 +41,7 @@
 				</td>
 				<td>
 					<form action="/commonCodeOur/delete/${resultData.COMMON_CODE_ID}" method="post">
-						<button class="btn outline-info"
+						<button class="btn btn-outline-info"
 							>Delete</button>
 					</form>
 				</td>
